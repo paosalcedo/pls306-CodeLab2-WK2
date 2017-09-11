@@ -70,6 +70,7 @@ public class KeyGrabber : Spawner {
 			case KeyCode.H:
 				for (int i = 0; i < hFormation.Count; i++) {
 					goSprites [i].transform.position = hFormation [i] + (-9 * Vector3.right);
+					Debug.Log("h pressed");
 				}
 				break;
 			case KeyCode.E:
