@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour {
 	public Sprite[] sprites;
 	
 	public virtual void Start(){
-		InvokeRepeating("SpriteTime", 1, 1);
+		InvokeRepeating("SpriteTime", 0, 1f);
 	}	
 
 	public virtual void SpriteTime(){

@@ -20,9 +20,10 @@ public class KeyGrabber : Spawner {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown (hKey) || Input.GetKeyDown(eKey) || Input.GetKeyDown(lKey) || Input.GetKeyDown(oKey)) {
-			IncreaseOffset ();
-		}
+		GetOffset (hKey);
+		GetOffset (eKey);
+		GetOffset (lKey);
+		GetOffset (oKey);
 
 		FormLetter (hKey, offset);
 		FormLetter (eKey, offset);
@@ -35,28 +36,24 @@ public class KeyGrabber : Spawner {
 			switch (key) {
 			case KeyCode.H:
 				for (int i = 0; i < Letters.hFormation.Count; i++) {
-//					goSprites [i].transform.position = hFormation [i] + (-9 * Vector3.right);
-					goSprites [i].transform.position = Letters.hFormation[i] + offset_;
+ 					goSprites [i].transform.position = Letters.hFormation[i] + offset_;
  				}
 				break;
 			case KeyCode.E:
 				for (int i = 0; i < Letters.eFormation.Count; i++) {
-//					goSprites [i].transform.position = eFormation [i] + (-6*Vector3.right);
-					goSprites [i].transform.position = Letters.eFormation [i] + offset_;
+ 					goSprites [i].transform.position = Letters.eFormation [i] + offset_;
 				}
 				break;
 			
 			case KeyCode.L:
 				for (int i = 0; i < Letters.lFormation.Count; i++) {
-//					goSprites [i].transform.position = lFormation [i] + (-3*Vector3.right);
-					goSprites [i].transform.position = Letters.lFormation [i] + offset_;
+ 					goSprites [i].transform.position = Letters.lFormation [i] + offset_;
 				}
 				break;
 
 			case KeyCode.O:
 				for (int i = 0; i < Letters.oFormation.Count; i++) {
-//					goSprites [i].transform.position = oFormation [i] + (0 * Vector3.right);
-					goSprites [i].transform.position = Letters.oFormation [i] + offset_;
+ 					goSprites [i].transform.position = Letters.oFormation [i] + offset_;
 				}
 				break;
 			default:
@@ -75,12 +72,18 @@ public class KeyGrabber : Spawner {
 	}
 
 	Vector3 IncreaseOffset(){
-		offset += Vector3.right;
-		if (offset.x > 9f) {
+		offset += (Vector3.right * 3);
+		if (offset.x > 18f) {
 			offset = Vector3.zero;
 		}
 		return offset;
 	}
+
+	void GetOffset(KeyCode key){
+		if (Input.GetKeyDown (key)) {
+			IncreaseOffset ();
+		}
+	}  
 
 
 }
