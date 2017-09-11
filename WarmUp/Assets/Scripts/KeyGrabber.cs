@@ -6,103 +6,62 @@ public class KeyGrabber : Spawner {
 
 	public List<GameObject> goSprites = new List<GameObject>();
 
-	List<Vector3> hFormation = new List<Vector3>();
-	List<Vector3> eFormation = new List<Vector3>();
-	List<Vector3> lFormation = new List<Vector3>();
-	List<Vector3> oFormation = new List <Vector3>();
-
 	public KeyCode hKey;
 	public KeyCode eKey;
 	public KeyCode lKey;
 	public KeyCode oKey;
 
-	void PopulateLists(){
-		hFormation.Add (new Vector3 (0, 0, 0));
-		hFormation.Add (new Vector3 (0, -1, 0));
-		hFormation.Add (new Vector3 (0, -2, 0));
-		hFormation.Add (new Vector3 (1, -1, 0));
-		hFormation.Add (new Vector3 (2, 0, 0));
-		hFormation.Add (new Vector3 (2, -1, 0));
-		hFormation.Add (new Vector3 (2, -2, 0));
-
-		eFormation.Add (new Vector3 (0, 0, 0));
-		eFormation.Add (new Vector3 (1, 0, 0));
-		eFormation.Add (new Vector3 (2, 0, 0));
-		eFormation.Add (new Vector3 (0, -1, 0));
-		eFormation.Add (new Vector3 (1, -1, 0));
-		eFormation.Add (new Vector3 (0, -2, 0));
-		eFormation.Add (new Vector3 (1, -2, 0));
-		eFormation.Add (new Vector3 (2, -2, 0));
-	
-		lFormation.Add (new Vector3 (0,0,0));
-		lFormation.Add (new Vector3 (0,-1,0));
-		lFormation.Add (new Vector3 (0,-2,0));
-		lFormation.Add (new Vector3 (1, -2, 0));
-		lFormation.Add (new Vector3 (2, -2, 0));
-
-		oFormation.Add (new Vector3 (0,0,0));
-		oFormation.Add (new Vector3 (0,-1,0));
-		oFormation.Add (new Vector3 (0,-2,0));
-		oFormation.Add (new Vector3 (1,0,0));
-		oFormation.Add (new Vector3 (1,-2,0));
-		oFormation.Add (new Vector3 (2, 0,0));
-		oFormation.Add (new Vector3 (2,-1,0));
-		oFormation.Add (new Vector3 (2,-2,0));
-
-
-	}
+	Vector3 offset = Vector3.zero;
 	// Use this for initialization
 	void Awake () {
-		PopulateLists ();
+		Letters.GenerateFormations();
 	}
 		
 	// Update is called once per frame
 	void Update () {
-		FormLetter (hKey);
-		FormLetter (eKey);
-		FormLetter (lKey);
-		FormLetter (oKey);
+
+		if (Input.GetKeyDown (hKey) || Input.GetKeyDown(eKey) || Input.GetKeyDown(lKey) || Input.GetKeyDown(oKey)) {
+			IncreaseOffset ();
+		}
+
+		FormLetter (hKey, offset);
+		FormLetter (eKey, offset);
+		FormLetter (lKey, offset);
+		FormLetter (oKey, offset);
 	}
 
-	void FormLetter (KeyCode key){
+	void FormLetter (KeyCode key, Vector3 offset_){
 		if(Input.GetKey(key)){
 			switch (key) {
 			case KeyCode.H:
-				for (int i = 0; i < hFormation.Count; i++) {
-					goSprites [i].transform.position = hFormation [i] + (-9 * Vector3.right);
-					Debug.Log("h pressed");
-				}
+				for (int i = 0; i < Letters.hFormation.Count; i++) {
+//					goSprites [i].transform.position = hFormation [i] + (-9 * Vector3.right);
+					goSprites [i].transform.position = Letters.hFormation[i] + offset_;
+ 				}
 				break;
 			case KeyCode.E:
-				for (int i = 0; i < eFormation.Count; i++) {
-					goSprites [i].transform.position = eFormation [i] + (-6*Vector3.right);
+				for (int i = 0; i < Letters.eFormation.Count; i++) {
+//					goSprites [i].transform.position = eFormation [i] + (-6*Vector3.right);
+					goSprites [i].transform.position = Letters.eFormation [i] + offset_;
 				}
 				break;
 			
 			case KeyCode.L:
-				for (int i = 0; i < lFormation.Count; i++) {
-					goSprites [i].transform.position = lFormation [i] + (-3*Vector3.right);
+				for (int i = 0; i < Letters.lFormation.Count; i++) {
+//					goSprites [i].transform.position = lFormation [i] + (-3*Vector3.right);
+					goSprites [i].transform.position = Letters.lFormation [i] + offset_;
 				}
 				break;
 
 			case KeyCode.O:
-				for (int i = 0; i < oFormation.Count; i++) {
-					goSprites [i].transform.position = oFormation [i] + (0 * Vector3.right);
+				for (int i = 0; i < Letters.oFormation.Count; i++) {
+//					goSprites [i].transform.position = oFormation [i] + (0 * Vector3.right);
+					goSprites [i].transform.position = Letters.oFormation [i] + offset_;
 				}
 				break;
 			default:
 				break;
 			}
-//			if (key == KeyCode.E) {
-//				for (int i = 0; i < eFormation.Count; i++) {
-//					goSprites [i].transform.position = eFormation [i];
-//				}
-//			}
-//			if (key == KeyCode.H) {
-//				for (int i = 0; i < hFormation.Count; i++) {
-//					goSprites [i].transform.position = eFormation [i];
-//				}
-//			}
 		}
 	}
 
@@ -114,4 +73,14 @@ public class KeyGrabber : Spawner {
 		goSprite_.AddComponent<Rigidbody2D>();
 		goSprites.Add (goSprite_);
 	}
+
+	Vector3 IncreaseOffset(){
+		offset += Vector3.right;
+		if (offset.x > 9f) {
+			offset = Vector3.zero;
+		}
+		return offset;
+	}
+
+
 }

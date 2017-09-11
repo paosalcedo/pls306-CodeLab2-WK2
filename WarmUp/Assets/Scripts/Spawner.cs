@@ -22,5 +22,6 @@ public class Spawner : MonoBehaviour {
 
 		goSprite.AddComponent<Rigidbody2D>();
 	}
+
 	
 }
