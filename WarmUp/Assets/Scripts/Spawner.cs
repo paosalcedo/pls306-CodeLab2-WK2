@@ -10,12 +10,12 @@ public class Spawner : MonoBehaviour {
 		InvokeRepeating("SpriteTime", 1, 1);
 	}	
 
-	void SpriteTime(){
+	public virtual void SpriteTime(){
 		int nextNum = GetComponent<NumberGenerator>().Next();
 		MakeSprite(nextNum);
 	}
 	
-	void MakeSprite(int num){
+	public virtual void MakeSprite(int num){
 		GameObject goSprite = new GameObject();
 		SpriteRenderer sr = goSprite.AddComponent<SpriteRenderer>();
 		sr.sprite = sprites[num];
