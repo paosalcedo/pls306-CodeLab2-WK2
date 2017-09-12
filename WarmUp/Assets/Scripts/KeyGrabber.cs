@@ -11,15 +11,14 @@ public class KeyGrabber : Spawner {
 	public KeyCode lKey;
 	public KeyCode oKey;
 
-	Vector3 offset = Vector3.zero;
+	Vector3 offset = Vector3.up * 9f;
 	// Use this for initialization
 	void Awake () {
 		Letters.GenerateFormations();
 	}
 		
 	// Update is called once per frame
-	void Update () {
-
+	void Update (){
 		GetOffset (hKey);
 		GetOffset (eKey);
 		GetOffset (lKey);
@@ -37,23 +36,24 @@ public class KeyGrabber : Spawner {
 			case KeyCode.H:
 				for (int i = 0; i < Letters.hFormation.Count; i++) {
  					goSprites [i].transform.position = Letters.hFormation[i] + offset_;
- 				}
+                    goSprites[i].GetComponent<Rigidbody2D>().isKinematic = false;
+                }
 				break;
 			case KeyCode.E:
 				for (int i = 0; i < Letters.eFormation.Count; i++) {
- 					goSprites [i].transform.position = Letters.eFormation [i] + offset_;
+ 					goSprites [i+9].transform.position = Letters.eFormation [i] + offset_;
 				}
 				break;
 			
 			case KeyCode.L:
 				for (int i = 0; i < Letters.lFormation.Count; i++) {
- 					goSprites [i].transform.position = Letters.lFormation [i] + offset_;
+ 					goSprites [i+18].transform.position = Letters.lFormation [i] + offset_;
 				}
 				break;
 
 			case KeyCode.O:
 				for (int i = 0; i < Letters.oFormation.Count; i++) {
- 					goSprites [i].transform.position = Letters.oFormation [i] + offset_;
+ 					goSprites [i+27].transform.position = Letters.oFormation [i] + offset_;
 				}
 				break;
 			default:
@@ -68,14 +68,17 @@ public class KeyGrabber : Spawner {
 		sr.sprite = sprites[num];
 
 		goSprite_.AddComponent<Rigidbody2D>();
+        goSprite_.AddComponent<WrapObject>();
 		goSprites.Add (goSprite_);
 	}
 
 	Vector3 IncreaseOffset(){
-		offset += (Vector3.right * 3);
-		if (offset.x > 18f) {
-			offset = Vector3.zero;
-		}
+        offset += (Vector3.right * 3); 
+        if (offset.x > 18f)
+        {
+            offset = Vector3.zero + (Vector3.down * 3);
+        }
+
 		return offset;
 	}
 
