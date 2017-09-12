@@ -42,19 +42,21 @@ public class KeyGrabber : Spawner {
 			case KeyCode.E:
 				for (int i = 0; i < Letters.eFormation.Count; i++) {
  					goSprites [i+9].transform.position = Letters.eFormation [i] + offset_;
-                    goSprites[i].GetComponent<Rigidbody2D>().isKinematic = false;
+                    goSprites[i+9].GetComponent<Rigidbody2D>().isKinematic = false;
                     }
                     break;
 			
 			case KeyCode.L:
 				for (int i = 0; i < Letters.lFormation.Count; i++) {
  					goSprites [i+18].transform.position = Letters.lFormation [i] + offset_;
+					goSprites[i+18].GetComponent<Rigidbody2D>().isKinematic = false;
 				}
 				break;
 
 			case KeyCode.O:
 				for (int i = 0; i < Letters.oFormation.Count; i++) {
  					goSprites [i+27].transform.position = Letters.oFormation [i] + offset_;
+					goSprites[i+27].GetComponent<Rigidbody2D>().isKinematic = false;
 				}
 				break;
 			default:
@@ -77,7 +79,7 @@ public class KeyGrabber : Spawner {
         offset += (Vector3.right * 3); 
         if (offset.x > 18f)
         {
-            offset = Vector3.zero + (Vector3.down * 3);
+			offset = Vector3.zero;
         }
 
 		return offset;
