@@ -42,8 +42,9 @@ public class KeyGrabber : Spawner {
 			case KeyCode.E:
 				for (int i = 0; i < Letters.eFormation.Count; i++) {
  					goSprites [i+9].transform.position = Letters.eFormation [i] + offset_;
-				}
-				break;
+                    goSprites[i].GetComponent<Rigidbody2D>().isKinematic = false;
+                    }
+                    break;
 			
 			case KeyCode.L:
 				for (int i = 0; i < Letters.lFormation.Count; i++) {
