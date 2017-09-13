@@ -6,16 +6,25 @@ public class ObjectBehavior : MonoBehaviour {
     Rigidbody2D rb;
     private float speed = 2f;
     private Vector2 direction;
-    // Use this for initialization
+	private Vector3 screenWidth;
+	private float startY;
+
     void Start() {
+		startY = transform.position.y;
+		screenWidth = new Vector3 (Screen.width, 0, 0);
         rb = GetComponent<Rigidbody2D>();
         rb.isKinematic = true;
         direction = Random.insideUnitCircle;
     }
 
     // Update is called once per frame
-    void Update() {
-        //WrapBalls();
+    void Update ()
+	{
+		WrapBalls ();
+
+		if ((transform.position.y - startY) <= Random.Range (0, 1f)) {
+			ReturnToStream();
+		}
     }
 
     private void FixedUpdate()
@@ -26,23 +35,25 @@ public class ObjectBehavior : MonoBehaviour {
     }
 
     void WrapBalls() {
-        if (transform.position.y <= -3f) {
-            transform.position = new Vector3(transform.position.x, transform.position.y + 9f, 0f);
+ 		if (transform.position.x >= Camera.main.ScreenToWorldPoint(screenWidth).x)
+        {
+            transform.position = new Vector3(-3f, transform.position.y, 0f);
         }
 
-        if (transform.position.x >= 60f)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y + 9f, 0f);
-        }
-
-        if (transform.position.x <= -9f)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y + 9f, 0f);
-        }
     }
 
     void MoveBalls() {
         rb.velocity = Vector2.right * speed + Random.insideUnitCircle;
         rb.angularVelocity = Random.Range(-100, 100);
     }
+
+	void ReturnToStream(){
+		rb.isKinematic = true;
+	}
+
+	public IEnumerator DelayedFall(float delay){
+		yield return new WaitForSeconds(delay);
+		rb.isKinematic = false;
+	}	
+
 }

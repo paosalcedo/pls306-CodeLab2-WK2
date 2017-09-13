@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour {
 
+	public float interval = 0f;
 	public Sprite[] sprites;
 	
 	public virtual void Start(){
-		InvokeRepeating("SpriteTime", 0, 0.1f);
+		InvokeRepeating("SpriteTime", 0, interval);
 	}	
 
 	public virtual void SpriteTime(){
