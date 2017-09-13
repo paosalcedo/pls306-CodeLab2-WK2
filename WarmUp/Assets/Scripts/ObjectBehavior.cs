@@ -8,8 +8,10 @@ public class ObjectBehavior : MonoBehaviour {
     private Vector2 direction;
 	private Vector3 screenWidth;
 	private float startY;
+	public bool canMove;
 
     void Start() {
+		canMove = true;
 		startY = transform.position.y;
 		screenWidth = new Vector3 (Screen.width, 0, 0);
         rb = GetComponent<Rigidbody2D>();
@@ -27,9 +29,9 @@ public class ObjectBehavior : MonoBehaviour {
 		}
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        if (rb.isKinematic) { 
+        if (canMove) { 
             MoveBalls();
         }
     }
@@ -39,7 +41,6 @@ public class ObjectBehavior : MonoBehaviour {
         {
             transform.position = new Vector3(-3f, transform.position.y, 0f);
         }
-
     }
 
     void MoveBalls() {
@@ -49,6 +50,7 @@ public class ObjectBehavior : MonoBehaviour {
 
 	void ReturnToStream(){
 		rb.isKinematic = true;
+		canMove = true;
 	}
 
 	public IEnumerator DelayedFall(float delay){
