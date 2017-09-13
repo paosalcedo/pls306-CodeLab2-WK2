@@ -26,7 +26,7 @@ public class KeyGrabber : Spawner {
 
 	public int maxSprites = 100;
 	private int randomInt = 0;
-	public float lerpTime = 0f;
+	public float lerpSpeed = 0f;
 
 	private Vector3 screenWidth = new Vector3 (Screen.width, 0, 0);
 
@@ -72,12 +72,12 @@ public class KeyGrabber : Spawner {
 			switch (key) {
 			case KeyCode.H:
 				for (int i = 0; i < Letters.hFormation.Count; i++) {
-					goSprites [i + randomInt].transform.position = new Vector2 (Mathf.Lerp (goSprites [i + randomInt].transform.position.x, Letters.hFormation [i].x + offset_.x, lerpTime), 
-						Mathf.Lerp (goSprites [i + randomInt].transform.position.y, Letters.hFormation [i].y + offset_.y, lerpTime));
+					goSprites [i + randomInt].transform.position = new Vector2 (Mathf.Lerp (goSprites [i + randomInt].transform.position.x, Letters.hFormation [i].x + offset_.x, lerpSpeed), 
+						Mathf.Lerp (goSprites [i + randomInt].transform.position.y, Letters.hFormation [i].y + offset_.y, lerpSpeed));
 
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
 					goSprites [i + randomInt].GetComponent<ObjectBehavior> ().canMove = false;
-					goSprites[i+randomInt].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+ 					goSprites[i+randomInt].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 					goSprites [i + randomInt].GetComponent<ObjectBehavior> ().StartCoroutine ("DelayedFall", 2f);
 
 				
@@ -85,47 +85,58 @@ public class KeyGrabber : Spawner {
 				break;
 			case KeyCode.E:
 				for (int i = 0; i < Letters.eFormation.Count; i++) {
-					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.eFormation[i].x + offset_.x, lerpTime), 
-																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.eFormation[i].y + offset_.y, lerpTime));
-					goSprites[i+randomInt].GetComponent<Rigidbody2D>().isKinematic = false;
-					goSprites[i+randomInt].GetComponent<Rigidbody2D>().velocity = Vector2.zero + Random.insideUnitCircle;
+					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.eFormation[i].x + offset_.x, lerpSpeed), 
+																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.eFormation[i].y + offset_.y, lerpSpeed));
+
+					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
+					goSprites [i + randomInt].GetComponent<ObjectBehavior> ().canMove = false;
+					goSprites[i+randomInt].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+					goSprites [i + randomInt].GetComponent<ObjectBehavior> ().StartCoroutine ("DelayedFall", 2f);
 					
                 }
                     break;
 			
 			case KeyCode.L:
 				for (int i = 0; i < Letters.lFormation.Count; i++) {
- 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.lFormation[i].x + offset_.x, lerpTime), 
-																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.lFormation[i].y + offset_.y, lerpTime));
- 					goSprites[i+randomInt].GetComponent<Rigidbody2D>().isKinematic = false;
-					goSprites[i+randomInt].GetComponent<Rigidbody2D>().velocity = Vector2.zero + Random.insideUnitCircle;
+ 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.lFormation[i].x + offset_.x, lerpSpeed), 
+																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.lFormation[i].y + offset_.y, lerpSpeed));
+					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
+					goSprites [i + randomInt].GetComponent<ObjectBehavior> ().canMove = false;
+					goSprites[i+randomInt].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+					goSprites [i + randomInt].GetComponent<ObjectBehavior> ().StartCoroutine ("DelayedFall", 2f);
 
 				}
 				break;
 
 			case KeyCode.O:
 				for (int i = 0; i < Letters.oFormation.Count; i++) {
- 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.oFormation[i].x + offset_.x, lerpTime), 
-																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.oFormation[i].y + offset_.y, lerpTime));
-					goSprites[i+randomInt].GetComponent<Rigidbody2D>().isKinematic = false;
-					goSprites[i+randomInt].GetComponent<Rigidbody2D>().velocity = Vector2.zero + Random.insideUnitCircle;
+ 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.oFormation[i].x + offset_.x, lerpSpeed), 
+																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.oFormation[i].y + offset_.y, lerpSpeed));
+					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
+					goSprites [i + randomInt].GetComponent<ObjectBehavior> ().canMove = false;
+					goSprites[i+randomInt].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+					goSprites [i + randomInt].GetComponent<ObjectBehavior> ().StartCoroutine ("DelayedFall", 2f);
 				}
 				break;
 			case KeyCode.A:
 				for (int i = 0; i < Letters.aFormation.Count; i++) {
-					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.aFormation[i].x + offset_.x, lerpTime), 
-																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.aFormation[i].y + offset_.y, lerpTime));
- 					goSprites[i+randomInt].GetComponent<Rigidbody2D>().isKinematic = false;
-					goSprites[i+randomInt].GetComponent<Rigidbody2D>().velocity = Vector2.zero + Random.insideUnitCircle;
+					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.aFormation[i].x + offset_.x, lerpSpeed), 
+																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.aFormation[i].y + offset_.y, lerpSpeed));
+					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
+					goSprites [i + randomInt].GetComponent<ObjectBehavior> ().canMove = false;
+					goSprites[i+randomInt].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+					goSprites [i + randomInt].GetComponent<ObjectBehavior> ().StartCoroutine ("DelayedFall", 2f);
 				}
 				break;
 
 			case KeyCode.B:
 				for (int i = 0; i < Letters.bFormation.Count; i++) {
-					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.bFormation[i].x + offset_.x, lerpTime), 
-																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.bFormation[i].y + offset_.y, lerpTime));
- 					goSprites[i+randomInt].GetComponent<Rigidbody2D>().isKinematic = false;
-					goSprites[i+randomInt].GetComponent<Rigidbody2D>().velocity = Vector2.zero + Random.insideUnitCircle;
+					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.bFormation[i].x + offset_.x, lerpSpeed), 
+																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.bFormation[i].y + offset_.y, lerpSpeed));
+					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
+					goSprites [i + randomInt].GetComponent<ObjectBehavior> ().canMove = false;
+					goSprites[i+randomInt].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+					goSprites [i + randomInt].GetComponent<ObjectBehavior> ().StartCoroutine ("DelayedFall", 2f);
 				}
 				break;
 			default:
@@ -167,8 +178,8 @@ public class KeyGrabber : Spawner {
 	void GetOffset (KeyCode key)
 	{
 		if (Input.GetKeyDown (key)) {
-			IncreaseOffset ();
 			randomInt = Random.Range(0, goSprites.Count+1);
+			IncreaseOffset ();
 		}
 	}  
 

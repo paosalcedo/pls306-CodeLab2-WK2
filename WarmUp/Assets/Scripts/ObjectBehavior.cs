@@ -48,7 +48,7 @@ public class ObjectBehavior : MonoBehaviour {
         rb.angularVelocity = Random.Range(-100, 100);
     }
 
-	void ReturnToStream(){
+	void ReturnToStream(){ //happens when balls fall back into the stream
 		rb.isKinematic = true;
 		canMove = true;
 	}
@@ -56,6 +56,7 @@ public class ObjectBehavior : MonoBehaviour {
 	public IEnumerator DelayedFall(float delay){
 		yield return new WaitForSeconds(delay);
 		rb.isKinematic = false;
+		rb.velocity = new Vector2 (Random.insideUnitCircle.x * 0.25f, Random.insideUnitCircle.y * 0.25f);
 	}	
 
 }

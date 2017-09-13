@@ -10,6 +10,8 @@ public class Letters {
 	public static List<Vector3> lFormation = new List<Vector3>();
 	public static List<Vector3> oFormation = new List <Vector3>();
 	public static List<Vector3> bFormation = new List<Vector3>();
+	public static List<Vector3> cFormation = new List<Vector3>();
+
 
 	public static List<Vector3> Formation = new List<Vector3>();
 
@@ -74,6 +76,14 @@ public class Letters {
 		bFormation.Add (new Vector3 (1,-2,0));
 		bFormation.Add (new Vector3 (2,-1,0));
 		bFormation.Add (new Vector3 (2,-2,0));
+
+		cFormation.Add (new Vector3 (0,0,0));  
+		cFormation.Add (new Vector3 (0,-1,0));
+		cFormation.Add (new Vector3 (0,-2,0));
+		cFormation.Add (new Vector3 (1,0,0));
+		cFormation.Add (new Vector3 (1,-2,0));
+		cFormation.Add (new Vector3 (2, 0,0));
+		cFormation.Add (new Vector3 (2,-2,0));
 
 	}
 
