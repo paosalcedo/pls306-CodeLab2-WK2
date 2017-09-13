@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WrapObject : MonoBehaviour {
+public class ObjectBehavior : MonoBehaviour {
     Rigidbody2D rb;
     private float speed = 2f;
     private Vector2 direction;
@@ -43,6 +43,6 @@ public class WrapObject : MonoBehaviour {
 
     void MoveBalls() {
         rb.velocity = Vector2.right * speed + Random.insideUnitCircle;
-        rb.angularVelocity = Random.Range(-50, 50);
+        rb.angularVelocity = Random.Range(-100, 100);
     }
 }
