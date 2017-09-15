@@ -37,7 +37,7 @@ public class ObjectBehavior : MonoBehaviour {
     }
 
     void WrapBalls() {
- 		if (transform.position.x >= Camera.main.ScreenToWorldPoint(screenWidth).x)
+ 		if (transform.position.x >= Camera.main.ScreenToWorldPoint(screenWidth).x + 1f)
         {
             transform.position = new Vector3(-3f, transform.position.y, 0f);
         }

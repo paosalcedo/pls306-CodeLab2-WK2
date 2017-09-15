@@ -209,7 +209,7 @@ public class KeyGrabber : Spawner {
 				break;
 			
 			case KeyCode.D:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
+				for (int i = 0; i < Letters.dFormation.Count; i++) {
 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.dFormation[i].x + offset_.x, lerpSpeed), 
 																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.dFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
@@ -220,7 +220,7 @@ public class KeyGrabber : Spawner {
 				break;
 
 			case KeyCode.F:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
+				for (int i = 0; i < Letters.fFormation.Count; i++) {
 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.fFormation[i].x + offset_.x, lerpSpeed), 
 																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.fFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
@@ -231,7 +231,7 @@ public class KeyGrabber : Spawner {
 				break;
 
 			case KeyCode.G:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
+				for (int i = 0; i < Letters.gFormation.Count; i++) {
 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.gFormation[i].x + offset_.x, lerpSpeed), 
 																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.gFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
@@ -242,7 +242,7 @@ public class KeyGrabber : Spawner {
 				break;
 
 			case KeyCode.I:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
+				for (int i = 0; i < Letters.iFormation.Count; i++) {
 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.iFormation[i].x + offset_.x, lerpSpeed), 
 																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.iFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
@@ -253,7 +253,7 @@ public class KeyGrabber : Spawner {
 				break;
 
 			case KeyCode.J:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
+				for (int i = 0; i < Letters.jFormation.Count; i++) {
 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.jFormation[i].x + offset_.x, lerpSpeed), 
 																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.jFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
@@ -264,7 +264,7 @@ public class KeyGrabber : Spawner {
 				break;
 
 			case KeyCode.K:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
+				for (int i = 0; i < Letters.kFormation.Count; i++) {
 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.kFormation[i].x + offset_.x, lerpSpeed), 
 																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.kFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
@@ -275,7 +275,7 @@ public class KeyGrabber : Spawner {
 				break;
 
 			case KeyCode.M:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
+				for (int i = 0; i < Letters.mFormation.Count; i++) {
 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.mFormation[i].x + offset_.x, lerpSpeed), 
 																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.mFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
@@ -286,7 +286,7 @@ public class KeyGrabber : Spawner {
 				break;
 
 			case KeyCode.N:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
+				for (int i = 0; i < Letters.nFormation.Count; i++) {
 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.nFormation[i].x + offset_.x, lerpSpeed), 
 																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.nFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
@@ -297,7 +297,7 @@ public class KeyGrabber : Spawner {
 				break;
 
 			case KeyCode.P:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
+				for (int i = 0; i < Letters.pFormation.Count; i++) {
 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.pFormation[i].x + offset_.x, lerpSpeed), 
 																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.pFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
@@ -308,7 +308,7 @@ public class KeyGrabber : Spawner {
 				break;
 
 			case KeyCode.Q:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
+				for (int i = 0; i < Letters.qFormation.Count; i++) {
 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.qFormation[i].x + offset_.x, lerpSpeed), 
 																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.qFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
@@ -319,7 +319,7 @@ public class KeyGrabber : Spawner {
 				break;
 
 			case KeyCode.R:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
+				for (int i = 0; i < Letters.rFormation.Count; i++) {
 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.rFormation[i].x + offset_.x, lerpSpeed), 
 																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.rFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
@@ -330,7 +330,7 @@ public class KeyGrabber : Spawner {
 				break;
 
 			case KeyCode.S:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
+				for (int i = 0; i < Letters.sFormation.Count; i++) {
 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.sFormation[i].x + offset_.x, lerpSpeed), 
 																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.sFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
@@ -341,7 +341,7 @@ public class KeyGrabber : Spawner {
 				break;
 
 			case KeyCode.T:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
+				for (int i = 0; i < Letters.tFormation.Count; i++) {
 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.tFormation[i].x + offset_.x, lerpSpeed), 
 																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.tFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
@@ -352,7 +352,7 @@ public class KeyGrabber : Spawner {
 				break;
 
 			case KeyCode.U:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
+				for (int i = 0; i < Letters.uFormation.Count; i++) {
 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.uFormation[i].x + offset_.x, lerpSpeed), 
 																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.uFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
@@ -363,7 +363,7 @@ public class KeyGrabber : Spawner {
 				break;
 
 			case KeyCode.V:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
+				for (int i = 0; i < Letters.vFormation.Count; i++) {
 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.vFormation[i].x + offset_.x, lerpSpeed), 
 																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.vFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
@@ -374,7 +374,7 @@ public class KeyGrabber : Spawner {
 				break;
 
 			case KeyCode.W:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
+				for (int i = 0; i < Letters.wFormation.Count; i++) {
 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.wFormation[i].x + offset_.x, lerpSpeed), 
 																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.wFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
@@ -385,9 +385,9 @@ public class KeyGrabber : Spawner {
 				break;
 
 			case KeyCode.X:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
-					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.wFormation[i].x + offset_.x, lerpSpeed), 
-																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.wFormation[i].y + offset_.y, lerpSpeed));
+				for (int i = 0; i < Letters.xFormation.Count; i++) {
+					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.xFormation[i].x + offset_.x, lerpSpeed), 
+																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.xFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
 					goSprites [i + randomInt].GetComponent<ObjectBehavior> ().canMove = false;
 					goSprites[i+randomInt].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -396,7 +396,7 @@ public class KeyGrabber : Spawner {
 				break;
 
 			case KeyCode.Y:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
+				for (int i = 0; i < Letters.yFormation.Count; i++) {
 					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.yFormation[i].x + offset_.x, lerpSpeed), 
 																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.yFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
@@ -407,9 +407,9 @@ public class KeyGrabber : Spawner {
 				break;
 
 			case KeyCode.Z:
-				for (int i = 0; i < Letters.cFormation.Count; i++) {
-					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.xFormation[i].x + offset_.x, lerpSpeed), 
-																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.xFormation[i].y + offset_.y, lerpSpeed));
+				for (int i = 0; i < Letters.zFormation.Count; i++) {
+					goSprites [i+randomInt].transform.position = new Vector2 (Mathf.Lerp(goSprites[i+randomInt].transform.position.x, Letters.zFormation[i].x + offset_.x, lerpSpeed), 
+																	Mathf.Lerp(goSprites[i+randomInt].transform.position.y, Letters.zFormation[i].y + offset_.y, lerpSpeed));
 					goSprites [i + randomInt].GetComponent<Rigidbody2D> ().isKinematic = true;
 					goSprites [i + randomInt].GetComponent<ObjectBehavior> ().canMove = false;
 					goSprites[i+randomInt].GetComponent<Rigidbody2D>().velocity = Vector2.zero;

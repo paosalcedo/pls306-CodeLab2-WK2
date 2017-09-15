@@ -57,7 +57,6 @@ public class Letters {
 		bFormation.Add (new Vector3 (0,0,0));  
 		bFormation.Add (new Vector3 (0,-1,0));
 		bFormation.Add (new Vector3 (0,-2,0));
-		bFormation.Add (new Vector3 (1,0,0));
 		bFormation.Add (new Vector3 (1,-1,0));
 		bFormation.Add (new Vector3 (1,-2,0));
 		bFormation.Add (new Vector3 (2,-1,0));
@@ -99,7 +98,9 @@ public class Letters {
 		gFormation.Add (new Vector3 (0,-2,0));
 		gFormation.Add (new Vector3 (1,0,0));
 		gFormation.Add (new Vector3 (1,-1,0));
+		gFormation.Add (new Vector3 (1.5f,-1,0));
 		gFormation.Add (new Vector3 (1,-2,0));
+		gFormation.Add (new Vector3 (2, 0,0));
 		gFormation.Add (new Vector3 (2,-1,0));
 		gFormation.Add (new Vector3 (2,-2,0));
 
@@ -154,9 +155,6 @@ public class Letters {
 		nFormation.Add (new Vector3 (0,-1,0));
 		nFormation.Add (new Vector3 (0,-2,0));
 		nFormation.Add (new Vector3 (1,0,0));
-		nFormation.Add (new Vector3 (1,-1,0));
-		nFormation.Add (new Vector3 (1,-2,0));
-		nFormation.Add (new Vector3 (2, 0,0));
 		nFormation.Add (new Vector3 (2,-1,0));
 		nFormation.Add (new Vector3 (2,-2,0));
 
@@ -196,12 +194,15 @@ public class Letters {
 		rFormation.Add (new Vector3 (2,-1,0));
 		rFormation.Add (new Vector3 (3,-2,0));
 
-		sFormation.Add (new Vector3 (0,0,0));  
-		sFormation.Add (new Vector3 (0,-1,0));
+		sFormation.Add (new Vector3 (0,0,0)); 
+		sFormation.Add (new Vector3 (0,-0.5f,0)); 
+		sFormation.Add (new Vector3 (1,0,0));
 		sFormation.Add (new Vector3 (1,-1,0));
 		sFormation.Add (new Vector3 (1,-2,0));
-		sFormation.Add (new Vector3 (2,-1,0));
+		sFormation.Add (new Vector3 (2,-1.5f,0));
+		sFormation.Add (new Vector3 (2,0,0));
 		sFormation.Add (new Vector3 (2,-2,0));
+		sFormation.Add (new Vector3 (0,-2,0));
 
 		tFormation.Add (new Vector3 (0,0,0));  
 		tFormation.Add (new Vector3 (1,0,0));
@@ -225,15 +226,14 @@ public class Letters {
 		vFormation.Add (new Vector3 (2, 0,0));
 		vFormation.Add (new Vector3 (2,-1,0));
 
-		wFormation.Add (new Vector3 (0,0,0));  
+		wFormation.Add (new Vector3 (-0.5f,0,0));  
 		wFormation.Add (new Vector3 (0,-1,0));
-		wFormation.Add (new Vector3 (0,-2,0));
-		wFormation.Add (new Vector3 (1,0,0));
+		wFormation.Add (new Vector3 (0.5f,-2,0));
+// 		wFormation.Add (new Vector3 (1,-0.5f,0));
 		wFormation.Add (new Vector3 (1,-1,0));
-		wFormation.Add (new Vector3 (1,-2,0));
-		wFormation.Add (new Vector3 (2, 0,0));
+		wFormation.Add (new Vector3 (2.5f, 0,0));
 		wFormation.Add (new Vector3 (2,-1,0));
-		wFormation.Add (new Vector3 (2,-2,0));
+		wFormation.Add (new Vector3 (1.5f,-2,0));
 
 		xFormation.Add (new Vector3 (0,0,0));  
 		xFormation.Add (new Vector3 (0,-2,0));
@@ -243,19 +243,21 @@ public class Letters {
 
 		yFormation.Add (new Vector3 (0,0,0));  
 		yFormation.Add (new Vector3 (0,-1,0));
-		yFormation.Add (new Vector3 (0,-2,0));
 		yFormation.Add (new Vector3 (1,-1,0));
 		yFormation.Add (new Vector3 (1,-2,0));
 		yFormation.Add (new Vector3 (2, 0,0));
 		yFormation.Add (new Vector3 (2,-1,0));
-		yFormation.Add (new Vector3 (2,-2,0));
 
-		zFormation.Add (new Vector3 (0,0,0));  
-		zFormation.Add (new Vector3 (0,-2,0));
+
+		zFormation.Add (new Vector3 (0,0,0)); 
+		zFormation.Add (new Vector3 (2,-0.5f,0)); 
+		zFormation.Add (new Vector3 (1,0,0));
 		zFormation.Add (new Vector3 (1,-1,0));
 		zFormation.Add (new Vector3 (1,-2,0));
-		zFormation.Add (new Vector3 (2, 0,0));
-		zFormation.Add (new Vector3 (2,-1,0));
+		zFormation.Add (new Vector3 (0,-1.5f,0));
+		zFormation.Add (new Vector3 (2,0,0));
+		zFormation.Add (new Vector3 (2,-2,0));
+		zFormation.Add (new Vector3 (0,-2,0));
 
 		Formation.Add (new Vector3 (0,0,0));  
 		Formation.Add (new Vector3 (0,-1,0));
