@@ -236,13 +236,9 @@ public class Letters {
 		wFormation.Add (new Vector3 (2,-2,0));
 
 		xFormation.Add (new Vector3 (0,0,0));  
-		xFormation.Add (new Vector3 (0,-1,0));
 		xFormation.Add (new Vector3 (0,-2,0));
-		xFormation.Add (new Vector3 (1,0,0));
 		xFormation.Add (new Vector3 (1,-1,0));
-		xFormation.Add (new Vector3 (1,-2,0));
 		xFormation.Add (new Vector3 (2, 0,0));
-		xFormation.Add (new Vector3 (2,-1,0));
 		xFormation.Add (new Vector3 (2,-2,0));
 
 		yFormation.Add (new Vector3 (0,0,0));  
@@ -270,7 +266,6 @@ public class Letters {
 		Formation.Add (new Vector3 (2, 0,0));
 		Formation.Add (new Vector3 (2,-1,0));
 		Formation.Add (new Vector3 (2,-2,0));
-
 	}
 
 }
