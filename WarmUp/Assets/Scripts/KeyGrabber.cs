@@ -62,6 +62,7 @@ public class KeyGrabber : Spawner {
 	// Update is called once per frame
 	void Update ()
 	{
+		Debug.Log("offset x" + offset.x);
 		if (goSprites.Count >= maxSprites) {
 			spawnerState = SpawnerState.DORMANT;
 		} else {
