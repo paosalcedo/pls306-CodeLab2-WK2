@@ -166,7 +166,7 @@ public class KeyGrabber : Spawner {
 	}
 
 	Vector3 IncreaseOffset(){
-        offset += (Vector3.right * 3); 
+        offset += (Vector3.right * 4f); 
 		if (offset.x >= Camera.main.ScreenToWorldPoint(screenWidth).x - 3f)
         {
 			offset = startingOffset;
